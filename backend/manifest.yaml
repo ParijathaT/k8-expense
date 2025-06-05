@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: expense
+  labels:
+       app: backend
+       tier: backend
+       project: expense
+spec:
+  selector:
+    matchLabels:
+      app: backend
+      tier: backend
+      project: expense
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+       app: backend
+       tier: backend
+       project: expense
+    spec:
+      containers:
+      - name: nginx
+        image: parijatha2025/backend:1.0.0
+
+---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: backend
+#   namespace: expense
+# spec:
+#   selector:
+#     app: backend
+#     tier: backend
+#     project: expense
+#   ports:
+#     - protocol: TCP
+#       port: 8080 # service port
+#       targetPort: 8080
+
+        
