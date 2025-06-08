@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: parijatha2025/frontend:1.0.0
+        image: parijatha2025/frontend:1.1.0
 
 ---
 apiVersion: v1
